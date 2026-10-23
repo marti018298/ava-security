@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#071326">
+<meta name="description" content="AVA Security — polskojęzyczna demonstracyjna asystentka bezpieczeństwa cyfrowego.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="AVA Security">
+<link rel="apple-touch-icon" href="ava-portret.jpg">
+<title>AVA Security 2.0 — Asystentka</title>
+<style>
+:root{color-scheme:dark;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;--bg:#061020;--panel:#0d233b;--line:#2b4b67;--pale:#adcbdf;--ink:#eff9ff;--mint:#56deb9;--blue:#7bd2ff;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100svh;background:radial-gradient(ellipse at 50% -15%,#225077 0%,#0a1c34 45%,#060e1e 95%);color:var(--ink)}button,input{font:inherit}button{touch-action:manipulation}button:focus-visible,input:focus-visible{outline:3px solid var(--mint);outline-offset:3px}button:disabled{opacity:.5;cursor:not-allowed}main{max-width:980px;margin:0 auto;padding:calc(env(safe-area-inset-top) + 18px) 17px calc(env(safe-area-inset-bottom) + 44px)}
+header{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px}.brand{display:flex;align-items:center;gap:11px}.logo{width:42px;height:42px;display:grid;place-items:center;background:#133958;border:1px solid #396c88;border-radius:14px;font-size:24px;box-shadow:0 0 28px #37c4ff22}.brand b{font-size:19px;letter-spacing:.10em}.brand em{color:var(--blue);font-style:normal}.sub{color:var(--pale);font-size:12px;margin-top:3px}.version{border:1px solid #346287;color:#bde4fa;background:#132b45;border-radius:999px;font-size:11px;padding:8px 10px;white-space:nowrap}
+.layout{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:14px}.column{min-width:0}.panel{border-radius:22px;border:1px solid var(--line);background:linear-gradient(155deg,#102942ea,#091c31ee);box-shadow:0 18px 36px #0002;padding:16px;margin-bottom:14px}
+.portrait{position:relative;overflow:hidden;isolation:isolate;border:1px solid #4483b9;border-radius:26px;background:#12314f;height:min(52vh,465px);min-height:300px;box-shadow:0 20px 54px #0006}.portrait img{display:block;height:100%;width:100%;object-fit:cover;object-position:center 27%;animation:breathe 6s ease-in-out infinite;transform-origin:center 54%;filter:saturate(1.03)}.portrait:after{position:absolute;content:'';inset:45% 0 0;background:linear-gradient(transparent,#051428ee);z-index:1;pointer-events:none}.portrait.listening{box-shadow:0 0 0 2px #57d7b466,0 0 40px #50cfb14f}.portrait.speaking img{animation:breathe 2.2s ease-in-out infinite}.portrait.listening img{animation:breathe 3.5s ease-in-out infinite}.portrait .glass-top{position:absolute;top:16px;left:16px;z-index:2;display:flex;gap:7px;align-items:center;border:1px solid #99dcff55;border-radius:25px;background:#071a30c9;padding:7px 11px;backdrop-filter:blur(8px);font-size:11px;letter-spacing:.08em}.led{background:var(--mint);width:8px;height:8px;border-radius:50%;box-shadow:0 0 12px var(--mint)}.portrait .glass-bottom{position:absolute;z-index:2;left:18px;right:18px;bottom:16px;display:flex;align-items:end;justify-content:space-between;gap:8px}.glass-bottom .status{font-size:13px;font-weight:700;margin-bottom:5px}.glass-bottom .hint{color:#b6d4e9;font-size:11px;line-height:1.45;max-width:205px}.waves{height:38px;display:flex;align-items:center;gap:3px;opacity:.4}.waves i{width:3px;height:6px;display:block;background:#82d8ff;border-radius:99px}.speaking .waves,.listening .waves{opacity:1}.speaking .waves i{animation:wave .55s ease-in-out infinite alternate}.listening .waves i{animation:wave .9s ease-in-out infinite alternate}.waves i:nth-child(2n){animation-delay:.15s}.waves i:nth-child(3n){animation-delay:.3s}.waves i:nth-child(5n){animation-delay:.45s}@keyframes wave{from{height:6px}to{height:32px}}@keyframes breathe{0%,100%{transform:scale(1.005)}50%{transform:scale(1.035)}}
+.kicker{font-size:11px;color:var(--mint);text-transform:uppercase;letter-spacing:.12em;font-weight:750;margin:0 0 8px}h1{font-size:clamp(20px,4vw,26px);margin:0 0 8px}p{line-height:1.5;margin:0}.intro{color:#c7dcef;font-size:14px}.controls{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.btn{border:1px solid #397aa6;background:#19476b;color:#f7fcff;border-radius:13px;padding:12px 14px;cursor:pointer;font-size:14px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:44px}.btn.primary{background:linear-gradient(135deg,#137eaf,#2475c4);border-color:#4da9e5;box-shadow:0 6px 16px #0b6b9f44}.btn.ghost{background:#0d253b;border-color:#34506b}.btn:active{transform:translateY(1px)}.toggle{display:flex;align-items:center;gap:10px;font-size:13px;color:#bdd6e8;margin-top:14px}.toggle input{accent-color:#3ac8ba;width:17px;height:17px}.note{font-size:12px;color:#a7c4d8;line-height:1.55}.note strong{color:#ccefff}.microstatus{font-size:12px;color:#b1d5e9;line-height:1.5;margin-top:9px;min-height:18px}
+.chat{height:315px;max-height:38vh;overflow:auto;display:flex;flex-direction:column;gap:10px;padding:5px 4px 12px;scrollbar-color:#47718c transparent}.bubble{max-width:93%;align-self:flex-start;background:#163552;border:1px solid #2b5672;border-radius:16px 16px 16px 5px;padding:11px 12px;font-size:14px;line-height:1.48;overflow-wrap:anywhere}.bubble.me{background:#23597a;align-self:flex-end;border-radius:16px 16px 5px 16px}.bubble small{display:block;margin:0 0 4px;color:#8dd8fa;font-size:10px;font-weight:700;letter-spacing:.09em}.bubble.me small{color:#b9f7e2}.chips{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 12px}.chip{border:1px solid #365f7c;background:#10314f;border-radius:999px;color:#daedfa;padding:8px 11px;font-size:12px;font-weight:600;cursor:pointer}.send{display:flex;gap:8px}.send input{background:#07172b;color:#fff;border:1px solid #47718f;border-radius:13px;padding:11px 12px;min-width:0;width:100%;font-size:16px}.send .btn{padding:11px 13px}
+h2{font-size:17px;margin:0 0 12px}.items{display:grid;gap:10px}.item{display:flex;align-items:center;gap:10px;padding:10px 11px;border:1px solid #284861;background:#0b2037;border-radius:13px}.item .sym{width:28px;text-align:center;font-size:19px}.item b{display:block;font-size:13px}.item span{font-size:11px;color:#aac8db}.pill{font-size:10px;white-space:nowrap;color:#a7c8d9;background:#20394b;padding:5px 7px;border-radius:50px;margin-left:auto}.foot{padding:0 4px;font-size:12px;color:#a8c5d7;line-height:1.58}.foot a{color:#8cdcff}.notice{border-left:3px solid #59d2bd;padding-left:11px}.notice.warn{border-color:#f0b66b}.hidden{display:none!important}
+@media(max-width:750px){.layout{grid-template-columns:1fr}.portrait{height:min(51vh,440px)}.chat{height:235px;max-height:unset}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.portrait img,.waves i{animation:none!important}}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div class="brand"><div class="logo" aria-hidden="true">🛡️</div><div><b>AVA <em>SECURITY</em></b><div class="sub">Twoja polskojęzyczna asystentka</div></div></div>
+  <span class="version">2.0 · WERSJA TESTOWA</span>
+</header>
+<div class="layout">
+  <div class="column">
+    <section class="portrait" id="portrait" aria-label="Portret AVA">
+      <img src="ava-portret.jpg" alt="AVA, wirtualna asystentka z krótkimi włosami" draggable="false">
+      <div class="glass-top"><span class="led"></span> AVA SECURITY</div>
+      <div class="glass-bottom"><div><div class="status" id="status" aria-live="polite">AVA jest gotowa</div><div class="hint">Dotknij mikrofonu albo napisz wiadomość poniżej</div></div><div class="waves" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+    </section>
+    <section class="panel" aria-labelledby="voice-title">
+      <div class="kicker">Centrum rozmowy</div>
+      <h1 id="voice-title">Cześć! Jestem AVA 👋</h1>
+      <p class="intro">Rozmawiaj ze mną po polsku o ochronie telefonu, kont i prywatności. Teraz działam w trybie demonstracyjnym.</p>
+      <div class="controls">
+        <button class="btn primary" id="listen" type="button">🎙️ Mów do AVA</button>
+        <button class="btn" id="hello" type="button">▶ Test głosu</button>
+        <button class="btn ghost" id="stop" type="button">■ Stop</button>
+      </div>
+      <p class="microstatus" id="micHelp">Przycisk mikrofonu uruchamia rozpoznawanie mowy przez przeglądarkę.</p>
+      <label class="toggle"><input type="checkbox" id="voice" checked> Czytaj odpowiedzi na głos</label>
+    </section>
+    <section class="panel">
+      <h2>Stan ochrony 🔐</h2>
+      <div class="items">
+        <div class="item"><span class="sym">📱</span><div><b>iPhone</b><span>Porady dotyczące bezpieczeństwa</span></div><span class="pill">Poradnik</span></div>
+        <div class="item"><span class="sym">✉️</span><div><b>Konta i hasła</b><span>2FA, klucze dostępu, wycieki</span></div><span class="pill">Poradnik</span></div>
+        <div class="item"><span class="sym">🛑</span><div><b>Oszustwa i phishing</b><span>Jak rozpoznać fałszywy link</span></div><span class="pill">Poradnik</span></div>
+      </div>
+      <p class="note" style="margin-top:11px">Ten panel <strong>nie skanuje telefonu</strong> i nie potwierdza stanu zabezpieczeń w czasie rzeczywistym.</p>
+    </section>
+  </div>
+  <div class="column">
+    <section class="panel" aria-labelledby="chat-title">
+      <div class="kicker">Czat i głos</div>
+      <h2 id="chat-title">Porozmawiaj z AVA</h2>
+      <div class="chat" id="chat" role="log" aria-live="polite" aria-relevant="additions"><div class="bubble"><small>AVA</small>Witaj! Zapytaj o iPhone’a, Gmaila, hasła albo phishing. Możesz też wybrać gotowe pytanie.</div></div>
+      <div class="chips" aria-label="Przykładowe pytania">
+        <button class="chip" type="button" data-question="Jak zabezpieczyć iPhone’a?">📱 iPhone</button>
+        <button class="chip" type="button" data-question="Jak zabezpieczyć Gmail?">✉️ Gmail</button>
+        <button class="chip" type="button" data-question="Jak rozpoznać oszustwo?">🛑 Oszustwa</button>
+        <button class="chip" type="button" data-question="Co potrafisz?">✨ O AVA</button>
+      </div>
+      <form class="send" id="form"><input id="message" type="text" autocomplete="off" maxlength="500" placeholder="Napisz do AVA…" aria-label="Wpisz wiadomość"><button class="btn primary" type="submit">Wyślij</button></form>
+    </section>
+    <section class="panel">
+      <div class="kicker">Przejrzyste zasady</div>
+      <h2>Prywatność przede wszystkim</h2>
+      <p class="note notice">Wersja 2.0 działa bez osobnego serwera AI. Wpisane pytania są przetwarzane w przeglądarce i <strong>nie są wysyłane do serwera AVA</strong>. Rozpoznawanie mowy może korzystać z usług dostawcy przeglądarki.</p>
+      <p class="note notice warn" style="margin-top:12px"><strong>Nie wpisuj haseł, kodów 2FA ani kluczy API.</strong> Pełna rozmowa z AI wymaga osobnego, zabezpieczonego zaplecza i nie jest jeszcze aktywna.</p>
+    </section>
+    <div class="foot">Wirtualny awatar AVA reaguje animacją podczas mówienia i słuchania. To nie jest jeszcze precyzyjna synchronizacja ust z dźwiękiem. <a href="https://cert.pl/" target="_blank" rel="noopener noreferrer">Ostrzeżenia CERT Polska ↗</a></div>
+  </div>
+</div>
+</main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const portrait=$('portrait'), status=$('status'), chat=$('chat');
+let recognition=null, isListening=false, isSpeaking=false, speakId=0;
+function setState(value){portrait.classList.remove('listening','speaking');if(value==='Mówię')portrait.classList.add('speaking');if(value==='Słucham')portrait.classList.add('listening');status.textContent=value}
+function addMessage(text,me=false){const div=document.createElement('div');div.className='bubble'+(me?' me':'');const name=document.createElement('small');name.textContent=me?'TY':'AVA';div.appendChild(name);div.appendChild(document.createTextNode(text));chat.appendChild(div);chat.scrollTop=chat.scrollHeight}
+function stopVoice(){speakId++;if('speechSynthesis' in window){window.speechSynthesis.cancel()}if(recognition){try{recognition.abort()}catch(e){}}recognition=null;isListening=false;isSpeaking=false;setState('AVA jest gotowa')}
+function speak(text){if(!$('voice').checked)return;if(!('speechSynthesis' in window)){$('micHelp').textContent='Ta przeglądarka nie obsługuje odczytu tekstu głosem.';return}
+  if(isListening&&recognition){try{recognition.abort()}catch(e){}}isListening=false;
+  const id=++speakId;window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='pl-PL';u.rate=.96;u.pitch=1.02;
+  const voices=window.speechSynthesis.getVoices();u.voice=voices.find(v=>v.lang.toLowerCase()==='pl-pl')||voices.find(v=>v.lang.toLowerCase().startsWith('pl'))||null;
+  u.onstart=()=>{if(id===speakId){isSpeaking=true;setState('Mówię')}};
+  const finish=()=>{if(id===speakId){isSpeaking=false;setState('AVA jest gotowa')}};
+  u.onend=finish;u.onerror=finish;window.speechSynthesis.speak(u);
+}
+function answer(query){const t=query.toLowerCase().normalize('NFKC');
+ if(/(cześć|czesc|hej|dzień dobry|dzien dobry|witaj)/i.test(t))return 'Cześć! Tu AVA. Miło Cię słyszeć. Chcesz porozmawiać o bezpieczeństwie iPhone’a czy kont internetowych?';
+ if(/(phishing|oszust|podejrzan|fałszyw|falszyw|sms|link|kradzież danych|kradziez danych)/i.test(t))return 'Nie klikaj nieznanych linków z wiadomości. Sprawdź adres nadawcy i otwórz usługę przez własną zakładkę. Podejrzanego SMS-a w Polsce możesz przesłać na numer 8080. Nie wysyłaj mi swoich kodów logowania.';
+ if(/(gmail|google|poczta|mail)/i.test(t))return 'W koncie Google włącz weryfikację dwuetapową albo klucz dostępu. Sprawdź ostatnie urządzenia, aktywne sesje i metody odzyskiwania. Kontrolę zacznij od myaccount.google.com/security-checkup.';
+ if(/(hasł|hasel|password|wyciek|klucz dostępu|passkey)/i.test(t))return 'Korzystaj z unikalnych haseł lub kluczy dostępu. W aplikacji Hasła sprawdzaj ostrzeżenia o wyciekach i powtarzanych hasłach. Jeśli hasło wyciekło, zmień je bezpośrednio w serwisie.';
+ if(/(iphone|telefon|ios|apple|icloud|face id)/i.test(t))return 'Sprawdź aktualizacje iOS, Ochronę skradzionego urządzenia, Znajdź mój iPhone i uwierzytelnianie dwupoziomowe. Przydatne są również kopie zapasowe i kontrola uprawnień aplikacji.';
+ if(/(kopi|backup|odzysk)/i.test(t))return 'Kopie zapasowe są bardzo ważne. W iPhonie otwórz Ustawienia, swoje imię, iCloud, a potem Backup w iCloud. Sprawdź datę ostatniej udanej kopii i możliwości odzyskania konta.';
+ if(/(co potraf|kim jeste|jak dziala|jak działa|sztuczn|prawdziw|ai)/i.test(t))return 'Jestem AVA Security 2.0, na razie w trybie demonstracyjnym. Rozpoznaję wybrane tematy, mówię po polsku i reaguję animacją. Prawdziwa swobodna rozmowa z modelem AI będzie wymagała bezpiecznego serwera.';
+ if(/(dzięk|dziek|super|świetn|swietn)/i.test(t))return 'Cieszę się! Jeśli chcesz, możemy sprawdzić kolejne zasady bezpieczeństwa cyfrowego.';
+ return 'Jeszcze uczę się nowych tematów jako wersja demonstracyjna. Mogę pomóc z iPhonem, Gmailem, hasłami, kopiami zapasowymi i phishingiem. Pełne AI podłączymy osobno, bez udostępniania klucza w kodzie strony.';
+}
+function submit(q){const value=(q||'').trim();if(!value)return;addMessage(value,true);const reply=answer(value);addMessage(reply,false);speak(reply)}
+$('form').addEventListener('submit',e=>{e.preventDefault();submit($('message').value);$('message').value=''});
+document.querySelectorAll('[data-question]').forEach(el=>el.addEventListener('click',()=>submit(el.dataset.question)));
+$('hello').addEventListener('click',()=>speak('Cześć! Jestem AVA. Witaj w wersji drugiej naszego centrum bezpieczeństwa. Miło mi z Tobą rozmawiać!'));
+$('stop').addEventListener('click',stopVoice);
+const SpeechRec=window.SpeechRecognition||window.webkitSpeechRecognition;
+if(!SpeechRec){$('listen').disabled=true;$('micHelp').textContent='Rozpoznawanie mowy nie jest dostępne w tej przeglądarce. Możesz nadal pisać, a AVA może czytać odpowiedzi.'}else{
+ $('listen').addEventListener('click',()=>{
+  if(isListening){if(recognition)try{recognition.stop()}catch(e){}return}
+  if(isSpeaking){window.speechSynthesis.cancel();isSpeaking=false;speakId++}
+  try{
+   const rec=new SpeechRec();recognition=rec;rec.lang='pl-PL';rec.interimResults=false;rec.maxAlternatives=1;
+   rec.onstart=()=>{isListening=true;setState('Słucham');$('micHelp').textContent='Słucham… Powiedz teraz pytanie po polsku.'};
+   rec.onresult=e=>{const query=e.results?.[0]?.[0]?.transcript||'';isListening=false;$('micHelp').textContent='Rozpoznano pytanie.';submit(query)};
+   rec.onerror=e=>{isListening=false;setState('AVA jest gotowa');$('micHelp').textContent=e.error==='not-allowed'?'Brak zgody na mikrofon. Sprawdź ustawienia Safari.':'Nie udało się rozpoznać mowy ('+e.error+'). Spróbuj ponownie lub napisz wiadomość.'};
+   rec.onend=()=>{isListening=false;if(!isSpeaking)setState('AVA jest gotowa')};
+   rec.start();
+  }catch(e){isListening=false;setState('AVA jest gotowa');$('micHelp').textContent='Nie mogę uruchomić mikrofonu. Spróbuj ponownie w Safari.'}
+ });
+}
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stopVoice()});
+</script>
+</body>
+</html>
